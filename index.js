@@ -43,15 +43,15 @@ client.on('message', (message) => {
     return message.reply('플써 얌마');
   }
 
-  if(message.content == 'embed') {
+  if(message.content == '파잌봇 정보') {
     let img = 'https://cdn.discordapp.com/attachments/752544566564880427/763054114174402601/dd78e5d417b49268.png';
     let embed = new Discord.RichEmbed()
-      .setTitle('대충 테스트')
+      .setTitle('파잌봇')
       .setURL('')
       .setAuthor('이파잌', img, '')
       .setThumbnail(img)
       .addBlankField()
-      .addField('Inline field title', 'Some value here')
+      .addField('안녕하세요', 'Some value here')
       .addField('Inline field title', 'Some value here', true)
       .addField('Inline field title', 'Some value here', true)
       .addField('Inline field title', 'Some value here', true)
