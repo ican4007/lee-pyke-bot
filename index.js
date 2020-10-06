@@ -31,16 +31,8 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == '파잌봇') {
-    return message.reply('왜 불렁');
-  }
-
-  if(message.content == '파잌봇 잘생김') {
-    return message.reply('고마웡');
-  }
-
-  if(message.content == '파잌봇 살려줘') {
-    return message.reply('플써 얌마');
+  if(message.content == 'ping') {
+    return message.reply('pong');
   }
 
   if(message.content == '파잌봇 정보') {
@@ -55,13 +47,13 @@ client.on('message', (message) => {
       .addField('그냥 대충 만든거임', '찡긋', true)
       .addField('진짜로 대충만듬', '찡긋찡긋', true)
       .addField('진짜인데 대충만들었는데', '찡긋빵긋', true)
-      .addField('앙', '앙\n앙\n앙\n')
+      .addField('앙', '앙\n앙\n\n')
       .addBlankField()
       .setTimestamp()
       .setFooter('이파잌만듬', img)
 
     message.channel.send(embed)
-  } 
+  }
   
 
   if(message.content.startsWith('!전체공지')) {
@@ -76,6 +68,43 @@ client.on('message', (message) => {
       return message.reply('공지를 전송했습니다.');
     } else {
       return message.reply('채널에서 실행해주세요.');
+    }
+  }
+
+  if(message.content.startsWith('!청소')) {
+    if(checkPermission(message)) return
+
+    var clearLine = message.content.slice('!청소 '.length);
+    var isNum = !isNaN(clearLine)
+
+    if(isNum && (clearLine <= 0 || 100 < clearLine)) {
+      message.channel.send("1부터 100까지의 숫자만 입력해주세요.")
+      return;
+    } else if(!isNum) { // c @나긋해 3
+      if(message.content.split('<@').length == 2) {
+        if(isNaN(message.content.split(' ')[2])) return;
+
+        var user = message.content.split(' ')[1].split('<@!')[1].split('>')[0];
+        var count = parseInt(message.content.split(' ')[2])+1;
+        const _limit = 10;
+        let _cnt = 0;
+
+        message.channel.fetchMessages({limit: _limit}).then(collected => {
+          collected.every(msg => {
+            if(msg.author.id == user) {
+              msg.delete();
+              ++_cnt;
+            }
+            return !(_cnt == count);
+          });
+        });
+      }
+    } else {
+      message.channel.bulkDelete(parseInt(clearLine)+1)
+        .then(() => {
+          AutoMsgDelete(message, `<@${message.author.id}> ` + parseInt(clearLine) + "개의 메시지를 삭제했습니다. (이 메세지는 잠시 후에 사라집니다.)");
+        })
+        .catch(console.error)
     }
   }
 });
@@ -98,6 +127,14 @@ function changeCommandStringLength(str, limitLen = 8) {
   }
 
   return tmp;
+}
+
+async function AutoMsgDelete(message, str, delay = 3000) {
+  let msg = await message.channel.send(str);
+
+  setTimeout(() => {
+    msg.delete();
+  }, delay);
 }
 
 
