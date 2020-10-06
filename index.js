@@ -31,8 +31,12 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == 'ping') {
-    return message.reply('pong');
+  if(message.content == '파잌봇') {
+    return message.reply('왜 불렁');
+  }
+
+  if(message.content == '파잌봇 잘생김') {
+    return message.reply('고마웡');
   }
 
   if(message.content == 'embed') {
@@ -50,10 +54,10 @@ client.on('message', (message) => {
       .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
       .addBlankField()
       .setTimestamp()
-      .setFooter('이파잌 테스트', img)
+      .setFooter('이파잌만듬', img)
 
     message.channel.send(embed)
-  } else if(message.content == 'embed2') {
+  } else if(message.content == '') {
     let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
     let commandList = [
       {name: 'ping', desc: '현재 핑 상태'},
