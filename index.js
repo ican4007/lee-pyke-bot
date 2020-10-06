@@ -55,7 +55,7 @@ client.on('message', (message) => {
       .addField('그냥 대충 만든거임', '찡긋', true)
       .addField('진짜로 대충만듬', '찡긋찡긋', true)
       .addField('진짜인데 대충만들었는데', '찡긋빵긋', true)
-      .addField('앙', 'Some value here1\nSome value here2\nSome value here3\n')
+      .addField('앙', '앙\n앙\n앙\n')
       .addBlankField()
       .setTimestamp()
       .setFooter('이파잌만듬', img)
