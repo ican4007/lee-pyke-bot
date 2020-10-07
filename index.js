@@ -35,12 +35,13 @@ client.on('message', (message) => {
     return message.reply('님이랑 놀고있음');
   }
 
-client.on('message', (message) => {
-  if(message.author.bot) return;
+  client.on('message', (message) => {
+    if(message.author.bot) return;
   
-   if(message.content == '파잌봇') {
-    return message.reply('님이랑 놀고있음');
-  }
+    if(message.content == '파잌봇 파잌이 어때') {
+      return message.reply('조아');
+    }
+  });
   
     if(message.content == '파잌봇 정보') {
     let img = 'https://cdn.discordapp.com/attachments/752544566564880427/763054114174402601/dd78e5d417b49268.png';
