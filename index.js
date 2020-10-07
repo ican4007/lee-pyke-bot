@@ -35,91 +35,19 @@ client.on('message', (message) => {
     return message.reply('님이랑 놀고있음');
   }
 
-  client.on('message', (message) => {
-    if(message.author.bot) return;
-  
-    if(message.content == '파잌봇 이파잌 어때') {
-      return message.reply('조아');
-    }
-  })
-  
-  client.on('message', (message) => {
-    if(message.author.bot) return;
-  
-    if(message.content == '파잌봇 박나원 어떄') {
-      return message.reply('『티모정글』');
-    }
-  })
-
-  client.on('message', (message) => {
-    if(message.author.bot) return;
-  
-    if(message.content == '파잌봇 op.gg') {
-      return message.reply('https://www.op.gg/');
-    }
-  })
-
-  client.on('message', (message) => {
-    if(message.author.bot) return;
-  
-    if(message.content == '파잌봇 op.gg 롤토체스') {
-      return message.reply('https://lolchess.gg/');
-    }
-  })
-
-  client.on('message', (message) => {
-    if(message.author.bot) return;
-  
-    if(message.content == '파잌봇 민서 어때') {
-      return message.reply('어음...민서교');
-    }
-  })
-  
-  client.on('message', (message) => {
-    if(message.author.bot) return;
-  
-    if(message.content == '파잌봇 유빈 어때') {
-      return message.reply('ㅗㅜㅑ');
-    }
-  })
-
-  client.on('message', (message) => {
-    if(message.author.bot) return;
-  
-    if(message.content == '파잌봇 우현 어때') {
-      return message.reply('야스오 겁나 잘함');
-    }
-  })
-
-  client.on('message', (message) => {
-    if(message.author.bot) return;
-  
-    if(message.content == '파잌봇 여비 어때') {
-      return message.reply('요네 겁나 잘함');
-    }
-  })
-
-  client.on('message', (message) => {
-    if(message.author.bot) return;
-  
-    if(message.content == '파잌봇 재영 어때') {
-      return message.reply('겁나 아니다 쩝');
-    }
-  })
-
-    if(message.content == '파잌봇 정보') {
+    if(message.content == '이파잌 정보') {
     let img = 'https://cdn.discordapp.com/attachments/752544566564880427/763054114174402601/dd78e5d417b49268.png';
     let embed = new Discord.RichEmbed()
-      .setTitle('파잌봇')
+      .setTitle('이파잌')
       .setURL('')
       .setAuthor('이파잌', img, '')
       .setThumbnail(img)
       .addBlankField()
       .addField('출생', '대충 이파잌이 만듬')
-      .addField('그냥 대충 만든거임', '찡긋', true)
-      .addField('진짜로 대충만듬', '찡긋찡긋', true)
-      .addField('진짜인데 대충만들었는데', '찡긋빵긋', true)
-      .addField('앙', '앙\n앙\n\n')
+      .addField('키', '999m', true)
+      .addField('몸무게', '999kg', true)
+      .addField('특징', '파이크 20만점', true)
+      .addField('전적', 'https://lolchess.gg/profile/kr/%EC%9D%B4%ED%8C%8C%EC%9E%8C\nhttps://www.op.gg/summoner/userName=%EC%9D%B4%ED%8C%8C%EC%9E%8C\n\n')
       .addBlankField()
       .setTimestamp()
       .setFooter('이파잌만듬', img)
