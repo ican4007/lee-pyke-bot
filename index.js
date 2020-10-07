@@ -41,7 +41,7 @@ client.on('message', (message) => {
     if(message.content == '파잌봇 이파잌 어때') {
       return message.reply('조아');
     }
-  });
+  })
   
   client.on('message', (message) => {
     if(message.author.bot) return;
@@ -49,7 +49,7 @@ client.on('message', (message) => {
     if(message.content == '파잌봇 박나원 어떄') {
       return message.reply('『티모정글』');
     }
-  });
+  })
 
   client.on('message', (message) => {
     if(message.author.bot) return;
@@ -57,7 +57,7 @@ client.on('message', (message) => {
     if(message.content == '파잌봇 op.gg') {
       return message.reply('https://www.op.gg/');
     }
-  });
+  })
 
   client.on('message', (message) => {
     if(message.author.bot) return;
@@ -65,7 +65,7 @@ client.on('message', (message) => {
     if(message.content == '파잌봇 op.gg 롤토체스') {
       return message.reply('https://lolchess.gg/');
     }
-  });
+  })
 
   client.on('message', (message) => {
     if(message.author.bot) return;
@@ -73,7 +73,7 @@ client.on('message', (message) => {
     if(message.content == '파잌봇 민서 어때') {
       return message.reply('어음...민서교');
     }
-  });
+  })
   
   client.on('message', (message) => {
     if(message.author.bot) return;
@@ -81,7 +81,7 @@ client.on('message', (message) => {
     if(message.content == '파잌봇 유빈 어때') {
       return message.reply('ㅗㅜㅑ');
     }
-  });
+  })
 
   client.on('message', (message) => {
     if(message.author.bot) return;
@@ -89,7 +89,7 @@ client.on('message', (message) => {
     if(message.content == '파잌봇 우현 어때') {
       return message.reply('야스오 겁나 잘함');
     }
-  });
+  })
 
   client.on('message', (message) => {
     if(message.author.bot) return;
@@ -97,7 +97,7 @@ client.on('message', (message) => {
     if(message.content == '파잌봇 여비 어때') {
       return message.reply('요네 겁나 잘함');
     }
-  });
+  })
 
   client.on('message', (message) => {
     if(message.author.bot) return;
@@ -105,7 +105,7 @@ client.on('message', (message) => {
     if(message.content == '파잌봇 재영 어때') {
       return message.reply('겁나 아니다 쩝');
     }
-  });
+  })
 
     if(message.content == '파잌봇 정보') {
     let img = 'https://cdn.discordapp.com/attachments/752544566564880427/763054114174402601/dd78e5d417b49268.png';
