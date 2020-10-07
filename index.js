@@ -31,11 +31,18 @@ client.on("guildMemberRemove", (member) => {
 client.on('message', (message) => {
   if(message.author.bot) return;
 
-  if(message.content == 'ping') {
-    return message.reply('pong');
+  if(message.content == '파잌봇 뭐해') {
+    return message.reply('님이랑 놀고있음');
   }
 
-  if(message.content == '파잌봇 정보') {
+client.on('message', (message) => {
+  if(message.author.bot) return;
+  
+   if(message.content == '파잌봇') {
+    return message.reply('님이랑 놀고있음');
+  }
+  
+    if(message.content == '파잌봇 정보') {
     let img = 'https://cdn.discordapp.com/attachments/752544566564880427/763054114174402601/dd78e5d417b49268.png';
     let embed = new Discord.RichEmbed()
       .setTitle('파잌봇')
@@ -56,10 +63,10 @@ client.on('message', (message) => {
   }
   
 
-  if(message.content.startsWith('!전체공지')) {
+  if(message.content.startsWith('파잌봇 공지')) {
     if(checkPermission(message)) return
     if(message.member != null) { // 채널에서 공지 쓸 때
-      let contents = message.content.slice('!전체공지'.length);
+      let contents = message.content.slice('파잌봇 공지'.length);
       message.member.guild.members.array().forEach(x => {
         if(x.user.bot) return;
         x.user.send(`<@${message.author.id}> ${contents}`);
